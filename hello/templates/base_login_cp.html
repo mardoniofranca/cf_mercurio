@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{%load static%}
+<html>
+	<head>
+		<title>Costurando o Futuro</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static  "assets/css/main.css"  %}"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="#" class="logo"><strong> 
+									{% if user.is_authenticated %}
+									<p>Usuário: {{ user.username }}</p></strong>{% endif %} </a>
+									<ul class="icons">
+										<li><a href="https://www.instagram.com/michellelimaribeiro/" 
+											class="icon brands fa-instagram" target="_blank"> <span class="label">Instagram</span></a></li>
+										<li><a href="https://www.instagram.com/davir.marques/" class="icon brands fa-instagram" target="_blank">
+											<span class="label">Instagram</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+							
+								<section id="banner">
+									
+									
+									<!--CONTEÚDO DA PÁGINA-->
+
+									
+												{% block content %}
+												{% endblock content %}						
+
+
+							<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>ÚLTIMAS NOTÍCIAS</h2>
+								</header>
+								<div class="posts">
+									<article>
+										<a href="#" class="image">
+											<img src="{% static  "images/pic01.jpg" %}" alt="" />
+										</a>
+
+										<h3>Atualização 1</h3>
+										<p>Aqui constará o conteúdo da atualização 1
+										</p>
+										<ul class="actions">
+											<li><a href="#" class="button">More</a></li>
+										</ul>
+									</article>
+									
+									<article>
+										<a href="#" class="image">
+											<img src="{% static  "images/pic03.jpg" %}" alt="" />
+										</a>	
+											
+										<h3>Atualização 2</h3>
+										<p>
+											Aqui constará o conteúdo da atualização 2
+										</p>
+										<ul class="actions">
+											<li><a href="#" class="button">More</a></li>
+										</ul>
+									</article>
+									<article>
+										<a href="#" class="image">
+											<img src="{% static  "images/pic04.jpg" %}" alt="" />
+										</a>
+										<h3>Atualização 3</h3>
+										<p>
+											Aqui constará o conteúdo da atualização 3
+										</p>
+										<ul class="actions">
+											<li><a href="#" class="button">More</a></li>
+										</ul>
+									</article>
+									
+								</div>
+							</section>
+
+					</div>
+				</div>
+
+			<!-- Sidebar -->
+
+				<div id="sidebar">
+					<div class="inner">
+						<!-- Menu -->
+							<nav id="MENU">
+								<header class="major">	
+									<h2>MENU</h2>
+								</header>
+								{% if user.is_authenticated %}
+								<ul>
+									<li><a href="/">Início</a></li>
+									<li> <a href="/cronograma1/"> Cronograma 1 |   Grupo 1 </a> </li>
+									<li> <a href="/cronograma2/">Cronograma  2 |   Grupo 2 </a> </li>
+									<li><a href="/materiais/">Materiais</a></li>
+									<li><a href="/relatorios/">Relatorios</a></li>
+									<li><a href="/dashboard/">Dashboard</a></li>
+									<li><a href="/login/">Login</a></li>
+								</ul>
+								{% endif %} 
+							</nav>
+
+						<!-- Footer -->
+							<footer id="footer">
+								<p>Desenvolvido por <a href="https://github.com/davirmarques" target="_blank">Davi Marques</a></p>
+							</footer>
+
+					</div>
+				</div>
+
+		</div>
+
+	<!-- Scripts -->
+		<script src="{% static "assets/js/jquery.min.js"      %}" ></script>
+		<script src="{% static "assets/js/browser.min.js"     %}"></script>
+		<script src="{% static "assets/js/breakpoints.min.js" %}"></script>
+		<script src="{% static "assets/js/util.js"            %}"></script>
+		<script src="{% static "assets/js/main.js"            %}"></script>
+
+</body>
+</html> 

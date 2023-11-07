@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{%load static%}
+<html>
+	<head>
+		<title>Costurando o Futuro</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static  "assets/css/main.css"  %}"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<h2> Consturando o Futuro  </h2>
+								</header>
+
+							<!-- Banner -->
+							
+								<section id="banner">
+									
+									
+									<!--CONTEÚDO DA PÁGINA-->
+
+
+									{% if user.is_authenticated %}
+									
+
+																									
+
+
+										
+										{% else %}
+
+										        {% block content %}
+												{% endblock content %}						
+										
+
+										{% endif %}
+
+
+									<!--FIM CONTEÚDO DA PÁGINA-->
+
+								</section>
+
+								
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+
+					<div id="sidebar">
+						<div class="inner">
+								
+							<!-- Footer -->
+								<footer id="footer">
+									<p>Desenvolvido por <a href="https://github.com/davirmarques" target="_blank">Davi Marques</a></p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static "assets/js/jquery.min.js"      %}" ></script>
+			<script src="{% static "assets/js/browser.min.js"     %}"></script>
+			<script src="{% static "assets/js/breakpoints.min.js" %}"></script>
+			<script src="{% static "assets/js/util.js"            %}"></script>
+			<script src="{% static "assets/js/main.js"            %}"></script>
+
+	</body>
+</html> 

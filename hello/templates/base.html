@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{%load static%}
+<html>
+	<head>
+		<title>Costurando o Futuro</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static  "assets/css/main.css"  %}"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									{% if user.is_authenticated %}
+									<a href="#" class="logo"><strong>Usuário: {{ user.username }}</strong></a>
+									{% else %}
+									
+									<h2> Consturando o Futuro  </h2>
+
+									{% endif %} 
+									<ul class="icons">
+										<li><a href="#" 
+											class="icon brands fa-instagram" target="_blank"> <span class="label">Instagram</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Banner -->
+							
+								<section id="banner">
+									
+									
+									<!--CONTEÚDO DA PÁGINA-->
+
+
+									{% if user.is_authenticated %}
+									
+
+												{% block content %}
+												{% endblock content %}						
+
+
+										
+										{% else %}
+											
+										
+												  <a href = "/accounts/login/" > Acesso Institucional</a>
+
+											
+										
+
+										{% endif %}
+
+
+									<!--FIM CONTEÚDO DA PÁGINA-->
+
+								</section>
+
+
+
+							<!-- Section -->
+							{% if user.is_authenticated %}
+
+								<section>
+									<header class="major">
+										<h2>Multiplicadores</h2>
+									</header>
+									<div class="features">
+										<article>
+											<span class="icon fa-gem"></span>
+											<div class="content">
+												<h3>Cronograma</h3>
+												<p>Acompanhe o cronograma de trabalho
+                                                    .</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-paper-plane"></span>
+											<div class="content">
+												<h3>Materiais</h3>
+												<p>Acompanhe o material de trabalho
+                                                    .</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-rocket"></span>
+											<div class="content">
+												<h3>Relatórios</h3>
+												<p>Realize o upload dos relatórios com fotos.</p>
+											</div>
+										</article>
+										<article>
+											<span class="icon solid fa-signal"></span>
+											<div class="content">
+												<a href="/dashboard/"><h3>Dashboard</h3></a>
+												<p>Acompanhe as entregas dos colaboradores</p>
+											</div>
+										</article>
+									</div>
+								</section>
+								{% endif %} 
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>ÚLTIMAS NOTÍCIAS</h2>
+									</header>
+									<div class="posts">
+										<article>
+											<a href="https://www.fortaleza.ce.gov.br/noticias/prefeitura-de-fortaleza-entrega-10-atelie-colaborativo-do-projeto-costurando-o-futuro-no-vicente-pinzon" 
+											   target="_blank"
+											   class="image">
+												<img src="{% static  "images/pic01.jpg" %}" alt="" />
+											</a>
+
+											<p>Prefeitura de Fortaleza entrega 10º ateliê colaborativo 
+											   o projeto Costurando o Futuro, no Vicente Pinzón
+											</p>
+											<ul class="actions">
+												<li><a 	href="https://www.fortaleza.ce.gov.br/noticias/prefeitura-de-fortaleza-entrega-10-atelie-colaborativo-do-projeto-costurando-o-futuro-no-vicente-pinzon" 
+														target="_blank"
+														class="button">Veja mais</a></li>
+											</ul>
+										</article>
+										
+										<article>
+											<a href="https://www.fortaleza.ce.gov.br/noticias/sarto-entrega-11-atelie-colaborativo-do-projeto-costurando-o-futuro-no-canindezinho" 
+											   target="_blank"												
+											   class="image">
+												<img src="{% static  "images/pic02.jpg" %}" alt="" />
+											</a>	
+											<p>	Sarto entrega 11º ateliê colaborativo do Projeto Costurando o Futuro, 
+												no Canindezinho
+											</p>
+											<ul class="actions">
+												<li><a 
+													href="https://www.fortaleza.ce.gov.br/noticias/sarto-entrega-11-atelie-colaborativo-do-projeto-costurando-o-futuro-no-canindezinho" 
+													target="_blank"												
+													class="button">Veja mais</a></li>
+											</ul>
+										</article>
+										
+										
+									</div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+							{% if user.is_authenticated %}
+								<nav id="MENU">
+									<header class="major">	
+										<h2>MENU</h2>
+									</header>
+									
+									<ul>
+										<li><a href="/">Início</a></li>
+										<li> <a href="/cronograma1/"> Cronograma 1 |   Grupo 1 </a> </li>
+										<li> <a href="/cronograma2/">Cronograma  2 |   Grupo 2 </a> </li>
+										<li><a href="/materiais/">Materiais</a></li>
+										<li><a href="/relatorios/">Relatorios</a></li>
+										<li><a href="/dashboard/">Dashboard</a></li>
+										<li><a href="{% url 'logout' %}">Sair</a></li>
+									</ul>
+								</nav>
+							{% endif %} 	
+							<!-- Footer -->
+								<footer id="footer">
+									<p>Desenvolvido por <a href="https://github.com/davirmarques" target="_blank">Davi Marques</a></p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static "assets/js/jquery.min.js"      %}" ></script>
+			<script src="{% static "assets/js/browser.min.js"     %}"></script>
+			<script src="{% static "assets/js/breakpoints.min.js" %}"></script>
+			<script src="{% static "assets/js/util.js"            %}"></script>
+			<script src="{% static "assets/js/main.js"            %}"></script>
+
+	</body>
+</html> 
