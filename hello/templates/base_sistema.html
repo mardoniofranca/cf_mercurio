@@ -18,13 +18,23 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
+							<header id="header">
+									<a href="#" class="logo"><strong>Usuário: {{ user.username }}</strong></a>
 									<h2> Consturando o Futuro  </h2>
-								</header>
+									<ul class="icons">
+										<li><a href="#" 
+											class="icon brands fa-instagram" target="_blank"> <span class="label">Instagram</span></a></li>
+									</ul>
+							</header>
 
-							
+							<!-- Banner -->
+							{% block content %}
+							{% endblock content %}						
+
+
+
 							<!-- Section -->
-								<section>
+							<section>
 									<header class="major">
 										<h2>ÚLTIMAS NOTÍCIAS</h2>
 									</header>
@@ -65,36 +75,37 @@
 										
 										
 									</div>
-
-
-									<header class="major">
-										<h2>Acesso Institucional</h2>
-									</header>
-
-									<article>
-										<p>	Clique aqui para acessar dados institucionais.
-										</p>
-										<ul class="actions">
-											<li><a 
-												href="menu/" 
-												target="_blank"												
-												class="button">Acesso</a></li>
-										</ul>
-									</article>
-
-
-
-								</section>
-
+							</section>
 
 							<!-- Footer -->
 							<footer id="footer">
 								<p>Feito por <a href="#">rive art</a> </p>
-							</footer>								
+							</footer>	
 
 						</div>
 					</div>
 
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="MENU">
+									<header class="major">	
+										<h2>MENU</h2>
+									</header>
+									<ul>
+										<li><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/menu/"> Menu </a> </li>
+										<li><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/cronograma1/"> Cronograma 1 |   Grupo 1 </a> </li>
+										<li><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/cronograma2/">Cronograma  2 |   Grupo 2 </a> </li>
+										<li><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/materiais/">Materiais</a></li>
+										<li><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/relatorios/">Relatorios</a></li>
+										<li><a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/dashboard/">Dashboard</a></li>
+										<li><a href="{% url 'logout'%}?next={{request.path}}">Sair</a></li>
+									</ul>
+								</nav>
+							
+						</div>
+					</div>
 
 			</div>
 

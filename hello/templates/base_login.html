@@ -16,15 +16,13 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-
 							<!-- Header -->
-								<header id="header">
+							<header id="header">
 									<h2> Consturando o Futuro  </h2>
-								</header>
+							</header>
 
 							<!-- Banner -->
-							
-								<section id="banner">
+							<section id="banner">
 									
 									
 									<!--CONTEÚDO DA PÁGINA-->
@@ -32,9 +30,16 @@
 
 									{% if user.is_authenticated %}
 									
+										<p>
+											<a href="#" class="logo"><strong>Usuário: {{ user.username }}</strong></a>
+										</p> 
+										
+										<br />
 
-																									
-
+										<p>
+											Clique aqui para sair :
+											<a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+										</p>
 
 										
 										{% else %}
@@ -48,28 +53,15 @@
 
 									<!--FIM CONTEÚDO DA PÁGINA-->
 
-								</section>
+							</section>
 
-								
-
-						</div>
-					</div>
-
-				<!-- Sidebar -->
-
-					<div id="sidebar">
-						<div class="inner">
-								
 							<!-- Footer -->
-								<footer id="footer">
-									<p>Desenvolvido por <a href="https://github.com/davirmarques" target="_blank">Davi Marques</a></p>
-								</footer>
-
+							<footer id="footer">
+								<p>Feito por <a href="#">rive art</a> </p>
+							</footer>
 						</div>
 					</div>
-
 			</div>
-
 		<!-- Scripts -->
 			<script src="{% static "assets/js/jquery.min.js"      %}" ></script>
 			<script src="{% static "assets/js/browser.min.js"     %}"></script>
